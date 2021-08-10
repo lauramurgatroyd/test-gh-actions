@@ -10,8 +10,8 @@ build:
 
   preserve_egg_dir: False
 
-  entry_points:
-    - hello-world = hello-world.hello_world:main
+  # entry_points:
+  #   - hello-world = hello-world.hello_world:main
 
   missing_dso_whitelist:
     - /lib64/libc.so.6            # [linux]
