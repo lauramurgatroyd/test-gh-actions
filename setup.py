@@ -26,7 +26,7 @@ setup(
       name = "hello-world",
       description = 'Used for testing gh-actions',
 	version = dversion,
-	packages = {'hello-world'},
+	packages = {'hello-world', 'hello-world.hello_world'},
       package_dir = {'hello-world': os.path.join('src','hello-world')},
       
 )
