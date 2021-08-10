@@ -4,11 +4,11 @@ on:
   release:
     types: [published]
   push:
-    branches: [ master ]
+    branches: [ main ]
     tags:
       - '**'
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
     
 jobs:
   build:
