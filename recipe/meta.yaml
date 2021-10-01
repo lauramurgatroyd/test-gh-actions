@@ -1,5 +1,5 @@
 package:
-  name: hello-world
+  name: hello_world
   version: {{ environ.get('GIT_DESCRIBE_TAG','v')[1:] }}
 
 source:
