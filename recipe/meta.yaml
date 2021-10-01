@@ -24,13 +24,13 @@ build:
     - C:\Windows\System32\SHELL32.dll  # [win]
 
 
-# test:
-#   source_files:
-#     - ./test
+test:
+  source_files:
+    - ./test
 
-#   commands:
-#     - python -c "import os; print ('TESTING IN THIS DIRECTORY' , os.getcwd())"
-#     - python -m unittest discover test
+  commands:
+    - python -c "import os; print ('TESTING IN THIS DIRECTORY' , os.getcwd())"
+    - python -m unittest discover test
   
 requirements:
   
