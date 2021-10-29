@@ -9,6 +9,8 @@ build:
   number: {{ GIT_DESCRIBE_NUMBER }}
 
   preserve_egg_dir: False
+  
+  noarch: python
 
   # entry_points:
   #   - hello-world = hello-world.hello_world:main
