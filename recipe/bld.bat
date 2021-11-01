@@ -5,5 +5,5 @@ ROBOCOPY /E "%RECIPE_DIR%\..\src" "%SRC_DIR%"
 copy "%RECIPE_DIR%\..\setup.py" "%SRC_DIR%\setup.py"
 cd %SRC_DIR%
 
-%PYTHON% setup.py install --single-version-externally-managed --record record.txt
+%PYTHON% setup.py install --single-version-externally-managed --record=record.txt
 if errorlevel 1 exit 1
