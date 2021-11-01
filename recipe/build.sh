@@ -5,4 +5,4 @@ cp -rv $RECIPE_DIR/../src $SRC_DIR
 cp -rv $RECIPE_DIR/../setup.py $SRC_DIR/setup.py
 cd ${SRC_DIR}
 
-${PYTHON} setup.py install
+${PYTHON} setup.py install --single-version-externally-managed --record=record.txt
