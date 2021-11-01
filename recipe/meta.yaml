@@ -13,7 +13,7 @@ build:
   noarch: python
 
   # entry_points:
-  #   - hello-world = hello-world.hello_world:main
+  #   - helloworld = hello_world.hello_world:main
 
   missing_dso_whitelist:
     - /lib64/libc.so.6            # [linux]
