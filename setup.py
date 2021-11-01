@@ -64,10 +64,10 @@ with open(fname, 'w') as f:
 print ('version {}'.format(version))
 
 setup(
-      name = "hello-world",
+      name = "hello_world",
       description = 'Used for testing gh-actions',
 	version = version,
-	packages = {'hello-world'},
-      package_dir = {'hello-world': os.path.join('src','hello-world')},
+	packages = {'hello_world'},
+      package_dir = {'hello_world': os.path.join('src','hello_world')},
       
 )
