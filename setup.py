@@ -68,6 +68,6 @@ setup(
       description = 'Used for testing gh-actions',
 	version = version,
 	packages = {'hello_world'},
-      package_dir = {'hello_world': os.path.join('src','hello_world')},
+      package_dir = {'': 'src'},
       
 )
