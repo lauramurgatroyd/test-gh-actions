@@ -6,6 +6,7 @@ source:
   path: ../
 
 build:
+  skip: True # [py==38 and np==115]
   number: {{ GIT_DESCRIBE_NUMBER }}
 
   preserve_egg_dir: False
