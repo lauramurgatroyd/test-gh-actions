@@ -6,9 +6,3 @@ import sys
 modules = glob.glob(join(dirname(__file__), "*.py"))
 __all__ = [basename(f)[:-3] for f in modules if isfile(f)
            and not f.endswith('__init__.py')]
-
-try:
-    from hello_world import version   
-
-except ImportError:
-    raise ImportError('error importing hello_world')
