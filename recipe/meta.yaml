@@ -6,15 +6,14 @@ source:
   path: ../
 
 build:
-  skip: True # [py==38 and np==115]
   number: {{ GIT_DESCRIBE_NUMBER }}
 
   preserve_egg_dir: False
   
   noarch: python
 
-  # entry_points:
-  #   - helloworld = hello_world.hello_world:main
+  entry_points:
+    - helloworld = hello_world.hello_world:main
 
   missing_dso_whitelist:
     - /lib64/libc.so.6            # [linux]
