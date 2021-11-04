@@ -1,5 +1,5 @@
 package:
-  name: hello-world
+  name: hello_world
   version: {{ environ.get('GIT_DESCRIBE_TAG','v')[1:] }}
 
 source:
@@ -12,8 +12,8 @@ build:
   
   noarch: python
 
-  # entry_points:
-  #   - hello-world = hello-world.hello_world:main
+  entry_points:
+    - helloworld = hello_world.hello_world:main
 
   missing_dso_whitelist:
     - /lib64/libc.so.6            # [linux]
@@ -26,13 +26,14 @@ build:
     - C:\Windows\System32\SHELL32.dll  # [win]
 
 
-# test:
-#   source_files:
-#     - ./test
+test:
+  source_files:
+    - ./test
 
-#   commands:
-#     - python -c "import os; print ('TESTING IN THIS DIRECTORY' , os.getcwd())"
-#     - python -m unittest discover test
+  commands:
+    - pip install -U setuptools
+    - python -c "import os, glob; print ('TESTING IN THIS DIRECTORY' , os.getcwd()); print ([el for el in glob.glob('*')])"
+    - python -m unittest discover test -v
   
 requirements:
   
@@ -41,6 +42,7 @@ requirements:
     - openmp                # [osx]
     - cmake
     - numpy {{ numpy }}
+    - setuptools
 
   run:
     - python
@@ -50,7 +52,6 @@ requirements:
     - matplotlib
     - openmp                # [osx]
     - qdarkstyle
-    - importlib_metadata    # [py<38]
 
 about:
   summary: 'Hello World'
