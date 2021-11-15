@@ -16,6 +16,9 @@ jobs:
       with:
         path: hello_world
         fetch-depth: 0
+    - name: install hello_world
+      run: |
+        python setup.py install
     - uses: ammaraskar/sphinx-action@master
       with:
         docs-folder: "hello_world/docs/"
