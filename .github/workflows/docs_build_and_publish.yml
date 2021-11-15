@@ -24,7 +24,7 @@ jobs:
         cd test-gh-actions
         $CONDA/bin/conda install conda-build -c anaconda
         $CONDA/bin/conda build recipe -c conda-forge
-        $CONDA/bin/conda install hello_world -c conda-forge
+        $CONDA/bin/conda install hello_world -c local
         $CONDA/bin/conda list
     - uses: ammaraskar/sphinx-action@master
       with:
