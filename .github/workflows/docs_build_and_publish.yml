@@ -16,8 +16,8 @@ jobs:
       with:
         path: test-gh-actions
         fetch-depth: 0
-    - name: install hello_world
     - uses: actions/setup-python@v2
+    - name: install hello_world
       run: |
         cd test-gh-actions
         python setup.py install
