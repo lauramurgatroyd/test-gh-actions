@@ -17,13 +17,12 @@ jobs:
         path: test-gh-actions
         fetch-depth: 0
     - uses: actions/setup-python@v2
-    - name: install hello_world
-      run: |
-        cd test-gh-actions
-        python setup.py install
     - name: install conda
       run: |
         # $CONDA is an environment variable pointing to the root of the miniconda directory
+        $CONDA/bin/conda list
+        cd test-gh-actions
+        python setup.py install
         $CONDA/bin/conda list
     - uses: ammaraskar/sphinx-action@master
       with:
