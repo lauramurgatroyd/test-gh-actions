@@ -24,7 +24,7 @@ jobs:
     - name: install conda
       run: |
         # $CONDA is an environment variable pointing to the root of the miniconda directory
-        $CONDA/bin/conda env update --file environment.yml --name base
+        $CONDA/bin/conda list
     - uses: ammaraskar/sphinx-action@master
       with:
         docs-folder: "test-gh-actions/docs/"
