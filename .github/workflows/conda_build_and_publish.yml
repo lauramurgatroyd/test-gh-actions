@@ -35,18 +35,18 @@ jobs:
     - name: Download artifact of the conda package.
       uses: actions/download-artifact@v2
       with:
-        name: 'test-gh-actions-build.tar.bz2'
+        name: 'test-gh-actions-package'
         path: 'conda_package'
     - uses: conda-incubator/setup-miniconda@v2
       with:
         python-version: 3.7
-        activate-environment: test-gh-actions-build
+        #activate-environment: test-gh-actions-build
     - uses: cascode-labs/build-sphinx-action@v0.1.0
       with:
         DOCS_PATH: 'test-gh-actions/docs/'
         CONDA_BUILD_ENV_FILEPATH: 'test-gh-actions/docs/docs_environment.yml'
         ARTIFACT_NAME: 'DocumentationHTML'
-        PACKAGE_FOLDER_PATH: 'conda_package'
+        PACKAGE_FOLDER_PATH: 'conda_package/test-gh-actions-package'
         PACKAGE_NAME: 'test-gh-actions-build.tar.bz2'
   docs_publish:
     needs: docs_build
