@@ -32,10 +32,10 @@ jobs:
       runs-on: ubuntu-latest
       steps:
       - name: Download artifact of the conda package.
-      uses: actions/download-artifact@v2
-      with:
-        name: test-gh-actions-build.tar.bz2
-        path: conda_package
+        uses: actions/download-artifact@v2
+        with:
+          name: 'test-gh-actions-build.tar.bz2'
+          path: 'conda_package'
       - uses: conda-incubator/setup-miniconda@v2
         with:
           python-version: 3.7
