@@ -29,6 +29,7 @@ jobs:
         name: test-gh-actions-package
         path: recipe/noarch/hello*
   docs_build:
+    needs: build
     runs-on: ubuntu-latest
     steps:
     - name: Download artifact of the conda package.
@@ -48,6 +49,7 @@ jobs:
         PACKAGE_FOLDER_PATH: 'conda_package'
         PACKAGE_NAME: 'test-gh-actions-build.tar.bz2'
   docs_publish:
+    needs: docs_build
     runs-on: ubuntu-latest
     needs: build
     if: github.ref == 'refs/heads/main'
