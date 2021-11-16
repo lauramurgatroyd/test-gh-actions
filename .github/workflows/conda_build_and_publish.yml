@@ -45,16 +45,15 @@ jobs:
       with:
         python-version: 3.7
         #activate-environment: test-gh-actions-build
-    - name: check directory
+    - name: change directory
       run: |
         cd test-gh-actions
-        ls
     - uses: cascode-labs/build-sphinx-action@v0.1.0
       with:
         DOCS_PATH: 'test-gh-actions/docs'
         CONDA_BUILD_ENV_FILEPATH: 'test-gh-actions/test-gh-actions/docs/docs_environment.yml'
         ARTIFACT_NAME: 'DocumentationHTML'
-        PACKAGE_FOLDER_PATH: 'test-gh-actions/test-gh-actions/artifacts/test-gh-actions-package/conda_package'
+        PACKAGE_FOLDER_PATH: 'test-gh-actions/test-gh-actions/artifacts/test-gh-actions-package'
         PACKAGE_NAME: 'test-gh-actions-build.tar.bz2'
   docs_publish:
     needs: docs_build
