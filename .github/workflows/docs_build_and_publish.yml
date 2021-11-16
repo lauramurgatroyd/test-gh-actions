@@ -28,7 +28,7 @@ jobs:
         $CONDA/bin/conda install hello_world -c local
         $CONDA/bin/conda list
     # Runs the action with the following inputs or defaults if not specified.
-    - uses: cascode-labs/build-sphinx-action/action.yml@v0
+    - uses: cascode-labs/build-sphinx-action@v0.1.0
       with:
         DOCS_PATH: 'test-gh-actions/docs/'
         CONDA_BUILD_ENV_FILEPATH: 'test-gh-actions/docs/docs_environment.yml'
