@@ -21,6 +21,7 @@ jobs:
         python-version: 3.7
         activate-environment: docs
     - name: install hello_world
+    - run: |
         cd test-gh-actions
         $CONDA/bin/conda install conda-build -c anaconda
         $CONDA/bin/conda build recipe -c conda-forge
