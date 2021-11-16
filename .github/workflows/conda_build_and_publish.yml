@@ -53,7 +53,7 @@ jobs:
         DOCS_PATH: 'test-gh-actions/docs'
         CONDA_BUILD_ENV_FILEPATH: 'test-gh-actions/docs/docs_environment.yml'
         ARTIFACT_NAME: 'DocumentationHTML'
-        PACKAGE_FOLDER_PATH: 'test-gh-actions/artifacts/test-gh-actions-package'
+        PACKAGE_FOLDER_PATH: 'test-gh-actions/artifacts'
         PACKAGE_NAME: 'test-gh-actions-build.tar.bz2'
   docs_publish:
     needs: docs_build
