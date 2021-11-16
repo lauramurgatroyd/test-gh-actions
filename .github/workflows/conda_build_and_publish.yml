@@ -36,6 +36,9 @@ jobs:
       with:
         path: test-gh-actions
         fetch-depth: 0
+    - name: change directory
+      run: |
+        cd test-gh-actions
     - name: Download artifact of the conda package.
       uses: actions/download-artifact@v2
       with:
@@ -45,15 +48,12 @@ jobs:
       with:
         python-version: 3.7
         #activate-environment: test-gh-actions-build
-    - name: change directory
-      run: |
-        cd test-gh-actions
     - uses: cascode-labs/build-sphinx-action@v0.1.0
       with:
         DOCS_PATH: 'test-gh-actions/docs'
         CONDA_BUILD_ENV_FILEPATH: 'test-gh-actions/docs/docs_environment.yml'
         ARTIFACT_NAME: 'DocumentationHTML'
-        PACKAGE_FOLDER_PATH: '../conda_package'
+        PACKAGE_FOLDER_PATH: 'conda_package'
         PACKAGE_NAME: 'test-gh-actions-build.tar.bz2'
   docs_publish:
     needs: docs_build
