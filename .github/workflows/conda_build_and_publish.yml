@@ -54,7 +54,7 @@ jobs:
         CONDA_BUILD_ENV_FILEPATH: 'test-gh-actions/docs/docs_environment.yml'
         ARTIFACT_NAME: 'DocumentationHTML'
         PACKAGE_FOLDER_PATH: 'conda_package'
-        PACKAGE_NAME: 'test-gh-actions-build.tar.bz2'
+        PACKAGE_NAME: 'hello_world'
   docs_publish:
     needs: docs_build
     runs-on: ubuntu-latest
