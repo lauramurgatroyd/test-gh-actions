@@ -25,6 +25,9 @@ dependencies:
   - ipp-devel
   - ipp-include
   - tigre
+  - sphinx_rtd_theme
+  - sphinxcontrib-bibtex
+  - pydata_sphinx_theme
   # - cil-astra
   # - ccpi-regulariser
   # - tomophantom
