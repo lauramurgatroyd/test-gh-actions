@@ -19,7 +19,7 @@ jobs:
     - uses: conda-incubator/setup-miniconda@v2
       with:
         python-version: 3.7
-        activate-environment: docs
+        activate-environment: test-gh-actions-build
     - name: install hello_world
       run: |
         cd test-gh-actions
