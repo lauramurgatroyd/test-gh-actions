@@ -25,6 +25,6 @@ dependencies:
   - ipp-devel
   - ipp-include
   - tigre
-  - cil-astra
-  - ccpi-regulariser
-  - tomophantom
+  # - cil-astra
+  # - ccpi-regulariser
+  # - tomophantom

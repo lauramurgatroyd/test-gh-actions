@@ -33,6 +33,7 @@ jobs:
         DOCS_PATH: 'test-gh-actions/docs/'
         CONDA_BUILD_ENV_FILEPATH: 'test-gh-actions/docs/docs_environment.yml'
         ARTIFACT_NAME: 'DocumentationHTML'
+        PACKAGE_FOLDER_PATH: '/home/runner/conda_pkgs_dir'
   publish:
     runs-on: ubuntu-latest
     needs: build
