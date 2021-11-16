@@ -16,28 +16,22 @@ jobs:
       with:
         path: test-gh-actions
         fetch-depth: 0
-    - uses: actions/setup-python@v2
-    - name: install conda
-      run: |
-        # $CONDA is an environment variable pointing to the root of the miniconda directory
-        $CONDA/bin/conda list
+    - uses: conda-incubator/setup-miniconda@v2
+      with:
+        python-version: 3.7
+        activate-environment: docs
+    - name: install hello_world
         cd test-gh-actions
         $CONDA/bin/conda install conda-build -c anaconda
         $CONDA/bin/conda build recipe -c conda-forge
         $CONDA/bin/conda install hello_world -c local
         $CONDA/bin/conda list
-    - name: test conda
-      run: |
-          $CONDA/bin/conda list
-    - uses: ammaraskar/sphinx-action@master
+    # Runs the action with the following inputs or defaults if not specified.
+    - uses: cascode-labs/build-sphinx-action/action.yml@v0
       with:
-        docs-folder: "test-gh-actions/docs/"
-        build-command: sphinx-build source build/nightly
-    # Create an artifact of the html output.
-    - uses: actions/upload-artifact@v1
-      with:
-        name: DocumentationHTML
-        path: test-gh-actions/docs/build/
+        DOCS_PATH: 'test-gh-actions/docs/'
+        CONDA_BUILD_ENV_FILEPATH: 'test-gh-actions/docs/docs_environment.yml'
+        ARTIFACT_NAME: 'DocumentationHTML'
   publish:
     runs-on: ubuntu-latest
     needs: build
@@ -47,7 +41,7 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: DocumentationHTML
-        path: test-gh-actions/docs/build/
+        path: test-gh-actions/docs/build/nightly
     - name: Commit documentation changes
       run: |
         git clone https://github.com/lauramurgatroyd/test-gh-actions.git --branch gh-pages --single-branch gh-pages
