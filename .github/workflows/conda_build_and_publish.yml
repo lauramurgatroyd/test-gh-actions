@@ -37,7 +37,7 @@ jobs:
         fetch-depth: 0
     - name: change directory
       run: |
-        cd test-gh-actions
+        ls
     - name: Download artifact of the conda package.
       uses: actions/download-artifact@v2
       with:
