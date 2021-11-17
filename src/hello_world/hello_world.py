@@ -1,5 +1,6 @@
-import tigre
+import qdarkstyle
 def print_hello_world():
+    ''' prints hello world '''
     print("Hello world")
 
 def main():
