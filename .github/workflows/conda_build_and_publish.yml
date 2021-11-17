@@ -34,7 +34,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        path: test-gh-actions
         fetch-depth: 0
     - name: change directory
       run: |
@@ -50,8 +49,8 @@ jobs:
         #activate-environment: test-gh-actions-build
     - uses: cascode-labs/build-sphinx-action@v0.1.0
       with:
-        DOCS_PATH: 'test-gh-actions/docs'
-        CONDA_BUILD_ENV_FILEPATH: 'test-gh-actions/docs/docs_environment.yml'
+        DOCS_PATH: 'docs'
+        CONDA_BUILD_ENV_FILEPATH: 'docs/docs_environment.yml'
         ARTIFACT_NAME: 'DocumentationHTML'
         PACKAGE_FOLDER_PATH: 'conda_package'
         PACKAGE_NAME: 'hello_world'
