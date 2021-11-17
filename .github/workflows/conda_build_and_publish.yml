@@ -63,11 +63,11 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: DocumentationHTML
-        path: test-gh-actions/docs/build/nightly
+        path: docs/build/nightly
     - name: Commit documentation changes
       run: |
         git clone https://github.com/lauramurgatroyd/test-gh-actions.git --branch gh-pages --single-branch gh-pages
-        cp -r test-gh-actions/docs/build/* gh-pages/
+        cp -r docs/build/* gh-pages/
         cd gh-pages
         touch .nojekyll
         git config --local user.email "action@github.com"
