@@ -47,7 +47,7 @@ jobs:
       with:
         python-version: 3.7
         #activate-environment: test-gh-actions-build
-    - uses: lauramurgatroyd/build-sphinx-action@allow-nightly-docs
+    - uses: lauramurgatroyd/build-sphinx-action@adjustments
       with:
         DOCS_PATH: 'docs'
         CONDA_BUILD_ENV_FILEPATH: 'docs/docs_environment.yml'
