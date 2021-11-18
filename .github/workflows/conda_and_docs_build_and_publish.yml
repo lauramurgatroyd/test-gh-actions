@@ -47,13 +47,15 @@ jobs:
       with:
         python-version: 3.7
         #activate-environment: test-gh-actions-build
-    - uses: cascode-labs/build-sphinx-action@v0.1.0
+    - uses: lauramurgatroyd/build-sphinx-action@allow-nightly-docs
       with:
         DOCS_PATH: 'docs'
         CONDA_BUILD_ENV_FILEPATH: 'docs/docs_environment.yml'
         ARTIFACT_NAME: 'DocumentationHTML'
         PACKAGE_FOLDER_PATH: 'conda_package'
         PACKAGE_NAME: 'hello_world'
+        PACKAGE_CONDA_CHANNELS: 'ccpi'
+        BUILD_SUBDIR_NAME: 'nightly'
   docs_publish:
     needs: docs_build
     runs-on: ubuntu-latest
@@ -63,7 +65,7 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: DocumentationHTML
-        path: docs/build/nightly
+        path: docs/build
     - name: Commit documentation changes
       run: |
         git clone https://github.com/lauramurgatroyd/test-gh-actions.git --branch gh-pages --single-branch gh-pages
