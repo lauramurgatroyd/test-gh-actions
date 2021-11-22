@@ -11,7 +11,7 @@ on:
     branches: [ main ]
     
 jobs:
-  build:
+  conda:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
@@ -29,7 +29,7 @@ jobs:
         name: test-gh-actions-package
         path: recipe/noarch/hello*
   docs_build:
-    needs: build
+    needs: conda
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
