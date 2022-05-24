@@ -23,6 +23,7 @@ jobs:
         publish: ${{ github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags') }}
         channels: '-c conda-forge'
         test_all: ${{(github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags')) || (github.ref == 'refs/heads/master')}}
+        additional_apt_packages: libegl1-mesa libegl1-mesa-dev
     - name: Upload artifact of the conda package.
       uses: actions/upload-artifact@v2
       with:
