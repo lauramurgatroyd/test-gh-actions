@@ -47,7 +47,7 @@ jobs:
       with:
         python-version: 3.7
         #activate-environment: test-gh-actions-build
-    - uses: lauramurgatroyd/build-sphinx-action@v0.0.1
+    - uses: lauramurgatroyd/build-sphinx-action@install-from-file
       with:
         DOCS_PATH: 'docs'
         CONDA_BUILD_ENV_FILEPATH: 'docs/docs_environment.yml'
