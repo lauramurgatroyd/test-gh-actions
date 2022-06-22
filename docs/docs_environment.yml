@@ -39,3 +39,4 @@ dependencies:
   - cil-astra
   - ccpi-regulariser
   - tomophantom
+  - qdarkstyle
