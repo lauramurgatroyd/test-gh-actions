@@ -1,0 +1,27 @@
+ name: Testing variables
+ 
+ on:
+  pull_request:
+    branches: [ master, main ]
+ 
+ jobs:
+ test-docker-vars:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        tag: ['latest', 'devel']
+    steps:      
+      - name: Build docker image
+        # Builds docker image from Docker file.
+        shell: bash -l {0}
+        run: |
+          echo compose_command="docker-compose -f docker/docker-compose.yml" >> $GITHUB_ENV
+          if [[ ${{ matrix.tag }} == 'devel' ]]; then echo compose_command="$compose_command -f docker/docker-compose.devel.yml" >> $GITHUB_ENV; fi
+          echo $compose_command
+          echo "Now this is the env var:
+          echo ${{ env.compose_command }}
+      - name: Get vars from previous step
+        # Builds docker image from Docker file.
+        shell: bash -l {0}
+        run: |
+          echo ${{ env.compose_command }}
