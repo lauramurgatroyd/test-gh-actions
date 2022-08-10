@@ -14,9 +14,9 @@ on:
   pull_request:
     branches: [ main ] 
     paths-ignore:
-    - 'recipe/*ba*'
-    - '*CHANGELOG.md'
-    - '*README.md'
+    - '**recipe/*ba*'
+    - '**CHANGELOG.md'
+    - '**README.md'
 
     
 jobs:
