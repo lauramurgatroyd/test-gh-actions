@@ -1,4 +1,4 @@
-## v??
+## vx.x.x
 * Add ignore-paths section to the action
 
 ## v0.1.0
