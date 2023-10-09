@@ -68,30 +68,28 @@ jobs:
   docs_publish:
     needs: docs_build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
     steps:
+    - uses: actions/checkout@v4
     - name: Download artifact of the html output.
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v3
       with:
         name: DocumentationHTML
         path: docs/build
-    - name: Commit documentation changes
-      run: |
-        git clone https://github.com/lauramurgatroyd/test-gh-actions.git --branch gh-pages --single-branch gh-pages
-        cp -r docs/build/* gh-pages/
-        cd gh-pages
-        touch .nojekyll
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add .
-        git commit -m "Update documentation" -a || true
-        # The above command will fail if no changes were present, so we ignore
-        # that.
+    - name: redirect to nightly
+      run: >
+        sed 's#DESTINATION#https://lauramurgatroyd.github.io/test-gh-actions/nightly/#g' 
+        docs/.redirect-template.html
+        > docs/build/index.html
     - name: Push changes
-      uses: ad-m/github-push-action@v0.6.0
+      uses: casperdcl/push-dir@v1
       with:
+        message: Update documentation
         branch: gh-pages
-        directory: gh-pages
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        dir: docs/build
+        nojekyll: true
+
+
+
+
 
 
