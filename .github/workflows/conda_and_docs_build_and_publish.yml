@@ -30,7 +30,7 @@ jobs:
         subDir: 'recipe'
         AnacondaToken: ${{ secrets.ANACONDA_TOKEN }}
         publish: ${{ github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags') }}
-        channels: 'conda-forge'
+        channels: '-c conda-forge'
         test_all: ${{(github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags')) || (github.ref == 'refs/heads/master')}}
     - name: Upload artifact of the conda package.
       uses: actions/upload-artifact@v2
