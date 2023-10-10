@@ -1,5 +1,6 @@
 import unittest
 
+
 class TestModuleBase(unittest.TestCase):
     def test_version(self):
         try:
