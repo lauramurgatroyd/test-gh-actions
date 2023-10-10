@@ -23,6 +23,9 @@ jobs:
   redirect:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
     - name: redirect to nightly
       run: >
         sed 's#DESTINATION#https://lauramurgatroyd.github.io/test-gh-actions/nightly/#g' 
