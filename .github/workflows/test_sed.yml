@@ -31,5 +31,6 @@ jobs:
         sed 's#DESTINATION#https://lauramurgatroyd.github.io/test-gh-actions/nightly/#g' 
         docs/.redirect-template.html
         > docs/index.html
-        cat docs/index.html
+    - name: print
+      run: cat docs/index.html
         
