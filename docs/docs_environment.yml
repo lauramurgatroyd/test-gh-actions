@@ -35,7 +35,8 @@ dependencies:
   - sphinx-autobuild=0.7
   - sphinx-click=2.7
   - sphinx-copybutton=0.3
- 
+  - cil
   - cil-astra
   - ccpi-regulariser
   - tomophantom
+  - qdarkstyle
